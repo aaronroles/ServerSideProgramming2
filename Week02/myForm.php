@@ -1,0 +1,29 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>Week 02</title>
+</head>
+
+<body>
+
+<input type="button" id="refreshBtn" value="Refresh"><br><br>
+
+<script src="https://cdn.jsdelivr.net/jquery/1.12.4/jquery.min.js"></script>
+<script src="https://cdn.jsdelivr.net/jquery.validation/1.15.1/jquery.validate.min.js"></script>
+
+<form method="POST" id="myForm" name="myForm" action="myValidation.php">
+	<input type="text" id="name" name="Name" placeholder="Your name..."><br>
+    <input type="tel" id="phone" name="Phone" placeholder="Your phone number..."><br>
+    <input type="email" id="email" name="Email" placeholder="Your email..."><br>
+    <input type="number" id="age" name="Age" placeholder="Your age..." min="1" max="100"><br>
+    <input type="radio" id="gender" name="Gender" value="Male"> Male<br>
+  	<input type="radio" id="gender" name="Gender" value="Female"> Female<br>
+    <input type="text" id="comment" name="Comment" placeholder="Your comment..." maxlength:"250"><br>
+    <input type="submit" id="submit" name="Submit" value="Submit">
+</form>
+
+<script src="myValidation.js"></script>
+
+</body>
+</html>
