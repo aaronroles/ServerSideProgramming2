@@ -11,7 +11,7 @@
         public function __construct($productName, $productPrice){
             echo '<div class="product" id="product_' . $productName . '">';
             echo $productName . " - &euro;" . $productPrice . "<br/>";
-            echo '<img src="images/' . $productName . '.jpg" width="125" height="82"><br/>';
+            echo '<img src="images/' . $productName . '.jpg" width="250" height="165"><br/>';
             echo '<button>Add to cart</button><br/>';
             echo '</div>';
         }

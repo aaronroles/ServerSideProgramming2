@@ -39,10 +39,12 @@ body{
     color: #eaf2ef;
 }
 
-.padding{
-    padding: 10px;
+.tidy{
+    margin: 10px;
 }
 
 .product{
     padding: 10px;
+    padding-top: 0px;
+    float: left;
 }
