@@ -1,6 +1,6 @@
 <?php
 
-    $productArray = array(
+    $productDb = array(
         array("Shoes", 90),
         array("Pants", 20),
         array("Shirt", 25)
@@ -12,7 +12,7 @@
             echo '<div class="product" id="product_' . $productName . '">';
             echo $productName . " - &euro;" . $productPrice . "<br/>";
             echo '<img src="images/' . $productName . '.jpg" width="250" height="165"><br/>';
-            echo '<button>Add to cart</button><br/>';
+            echo '<input type="submit" id="submit" name="Submit" value="Submit" class="tidy"><br/>';
             echo '</div>';
         }
     }

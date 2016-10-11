@@ -48,3 +48,8 @@ body{
     padding-top: 0px;
     float: left;
 }
+
+#goToCart{
+    float:right;
+    margin: 5px;
+}
