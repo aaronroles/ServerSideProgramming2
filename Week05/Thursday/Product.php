@@ -9,11 +9,11 @@
     class Product{
 
         public function __construct($productName, $productPrice){
-            echo '<div class="product" id="product_' . $productName . '">';
-            echo $productName . " - &euro;" . $productPrice . "<br/>";
-            echo '<img src="images/' . $productName . '.jpg" width="250" height="165"><br/>';
-            echo '<input type="submit" id="submit" name="Submit" value="Submit" class="tidy"><br/>';
-            echo '</div>';
+            echo '<form method="POST" class="product" id="product_'.$productName.'">';
+                echo $productName . " - &euro;" . $productPrice . "<br/>";
+                echo '<img src="images/' . $productName . '.jpg" width="250" height="165"><br/>';
+                echo '<input type="submit" id="submit" name="AddProduct" value="Submit" class="tidy"><br/>';
+            echo '</form>';
         }
     }
 

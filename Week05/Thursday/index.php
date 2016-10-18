@@ -9,13 +9,13 @@
     echo'</div>';
     include('html/footer.php');
 
-    /*if(isset($_POST["Submit"])){
+    if(isset($_POST["Submit"])){
         $newPrdName = checkInput($_POST["productName"]);
         $newPrdPrice = checkInput($_POST["productPrice"]);
         $newPrd = new Product($newPrdName, $newPrdPrice);
         $newObj = array($newPrdName, $newPrdPrice);
         array_push($productDb, $newObj);
-        echo print_r($productDb);
+        //echo print_r($productDb);
     }
 
     function checkInput($data){
@@ -45,25 +45,11 @@
                     }
                 }
             }
-
-            /*if(filter_var($data, FILTER_VALIDATE_EMAIL)){
-                $sanitised_email = filter_var($data, FILTER_SANITIZE_EMAIL);
-                if(filter_var($sanitised_email, FILTER_VALIDATE_EMAIL)){
-                    $data = strip_tags($data);
-                    $data = trim($data);
-                    $data = htmlentities($data);
-                    $data = htmlspecialchars($data);
-                    $data = stripslashes($data);
-                    //echo "Checked, validated and sanitised: " . $data . "<br>";
-                    return $data;
-                }
-            }  
+            else{
+                echo "Invalid data";
+            }
         }
-
-        else{
-            echo "Invalid data";
-        }
-    }*/
+    }
 ?>
 
 <link rel='stylesheet' type='text/css' href='html/styles.php' />
