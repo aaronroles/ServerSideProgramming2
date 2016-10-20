@@ -15,6 +15,13 @@
         $mpdf = new MPDF();
         $mpdf->WriteHTML(
             "<h1>".$cvName." CV</h1>"
+            ."<ul>
+                <li>Phone number: ".$cvPhone."</li>
+                <li>Email: ".$cvEmail."</li>
+                <li>Education: ".$cvEdu."</li>
+                <li>Experience: ".$cvExp."</li>
+                <li>Interests: ".$cvInt."</li>  
+            </ul>"
         );
 
         $mpdf->Output("pdf/".$cvTitle.".pdf", "F");
