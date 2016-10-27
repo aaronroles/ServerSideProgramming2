@@ -7,4 +7,12 @@
     catch(PDOException $e){
         echo "Error - ".$e->getMessage();
     }
+
+    if(isset($_POST["submitLogin"])){
+        // Working on index.php
+    }
+
+    if(isset($_POST["submitRegister"])){
+        // Working on index.php
+    }
 ?>

@@ -8,6 +8,6 @@
         <input type="email" id="email" name="email" placeholder="Email"><br/>
         <input type="text" id="firstname" name="firstname" placeholder="First Name"><br/>
         <input type="text" id="lastname" name="lastname" placeholder="Last name"><br/>
-        <input type="submit" id="submit" name="submit" value="Register"><br/>
+        <input type="submit" id="submit" name="submitRegister" value="Register"><br/>
     </form>
 </div>
