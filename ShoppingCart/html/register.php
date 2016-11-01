@@ -11,3 +11,7 @@
         <input type="submit" id="submit" name="submitRegister" value="Register"><br/>
     </form>
 </div>
+
+<?php
+
+?>

@@ -1,4 +1,6 @@
 <?php
+    include("validation.php");
+
     try{
         $db = new PDO("mysql:host=localhost;dbname=shopping", "root", "");
         $db->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
@@ -12,7 +14,7 @@
             $password = SHA1($_POST["password"]);
 
             // Prepare DB statement to check if user exists
-            $stmt = $db->prepare("SELECT username FROM users WHERE username = :username AND password = :password");
+            $stmt = $db->prepare('SELECT username FROM users WHERE username = :username AND password = :password');
 
             // Bind posted data to variables
             $stmt->bindParam(":username", $username);
@@ -26,7 +28,7 @@
                 // Start a session
                 session_start(); 
                 $_SESSION["userSession"] = "Welcome, ".$username;
-                //echo $_SESSION["userSession"];
+                echo $_SESSION["userSession"];
             }
 
             // Otherwise we have no match, error 
@@ -39,15 +41,15 @@
         if(isset($_POST["submitRegister"])){
 
             // Retrieve posted data
-            $username = $_POST["username"];
+            $username = validateString($_POST["username"]);
             $password = SHA1($_POST["password"]);
-            $email = $_POST["email"];
-            $firstName = $_POST["firstname"];
-            $lastName = $_POST["lastname"];
+            $email = validateEmail($_POST["email"]);
+            $firstName = validateString($_POST["firstname"]);
+            $lastName = validateString($_POST["lastname"]);
 
             // Prepare DB statement to insert new values
-            $stmt = $db->prepare("INSERT INTO users(userId, username, password, email, firstName, lastName)  
-            VALUES (NULL, :username, :password, :email, :firstName, :lastName");
+            $stmt = $db->prepare('INSERT INTO users (userId, username, password, email, firstName, lastName) 
+            VALUES (NULL, :username, :password, :email, :firstName, :lastName)');
 
             // Bind data 
             $stmt->bindParam(":username", $username);
@@ -58,6 +60,13 @@
 
             // Execute query
             $stmt->execute();
+
+            // !-----!
+            // When a user successfully registers have some sort
+            // of display letting them know that the data was
+            // accepted such as a pop up. 
+            // !-----!
+            
         }
     }
 
