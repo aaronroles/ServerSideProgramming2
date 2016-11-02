@@ -27,7 +27,7 @@
             if($stmt->rowCount() == 1){
                 // Start a session
                 session_start(); 
-                $_SESSION["userSession"] = "Welcome, ".$username;
+                $_SESSION["userSession"] = $username." is logged in";
                 echo $_SESSION["userSession"];
             }
 
@@ -67,12 +67,20 @@
             // of display letting them know that the data was
             // accepted such as a pop up. 
             // !-----!
+
+            session_start();
+            $_SESSION["userSession"] = "New user ".$username." has registered";
+
+            // Maybe look at automatically logging in a new user 
+            // once they successfully register details
             
         }
 
         // LOGGING OUT
         if(isset($_POST["submitLogout"])){
-            
+            session_start();
+            unset($_SESSION["userSession"]);
+            //echo "Logged out";
         }
     }
 
