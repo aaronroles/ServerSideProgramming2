@@ -11,7 +11,7 @@
 
             // Retrieve posted data
             $username = $_POST["username"];
-            $password = SHA1($_POST["password"]);
+            $password = SHA1(validateString($_POST["password"]));
 
             // Prepare DB statement to check if user exists
             $stmt = $db->prepare('SELECT username FROM users WHERE username = :username AND password = :password');
@@ -43,7 +43,7 @@
 
             // Retrieve posted data
             $username = validateString($_POST["username"]);
-            $password = SHA1($_POST["password"]);
+            $password = SHA1(validateString($_POST["password"]));
             $email = validateEmail($_POST["email"]);
             $firstName = validateString($_POST["firstname"]);
             $lastName = validateString($_POST["lastname"]);
