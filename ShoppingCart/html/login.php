@@ -1,4 +1,3 @@
-<link rel='stylesheet' type='text/css' href='styles.php'/>
 
 <div id="loginUser">
     <h1 id="loginHeading">Login</h1>

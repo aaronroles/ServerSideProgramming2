@@ -4,9 +4,9 @@
     try{
         $db = new PDO("mysql:host=localhost;dbname=shopping", "root", "");
         $db->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
-
         //echo "Connected to db";
 
+        // LOGGING IN
         if(isset($_POST["submitLogin"])){
 
             // Retrieve posted data
@@ -38,6 +38,7 @@
             }
         }
 
+        // REGISTER NEW USER
         if(isset($_POST["submitRegister"])){
 
             // Retrieve posted data
@@ -66,6 +67,11 @@
             // of display letting them know that the data was
             // accepted such as a pop up. 
             // !-----!
+            
+        }
+
+        // LOGGING OUT
+        if(isset($_POST["submitLogout"])){
             
         }
     }

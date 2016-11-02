@@ -1,4 +1,3 @@
-<link rel='stylesheet' type='text/css' href='styles.php'/>
 
 <div id="registerUser">
     <h1 id="registerHeading">Register</h1>

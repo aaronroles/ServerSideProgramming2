@@ -1,4 +1,4 @@
-<link rel='stylesheet' type='text/css' href='html/styles.php'/>
+<link rel='stylesheet' type='text/css' href='html/styles.css'/>
 
 <?php
     // Always have database available
@@ -14,6 +14,6 @@
     if (!empty($_SESSION["userSession"])){
         // Display cart.php - a list of chosen products
         // Display products.php - a list of all products
-        // Display a log out button - end session 
+        include("html/logout.php");
     }
 ?>
