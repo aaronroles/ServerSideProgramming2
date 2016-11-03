@@ -12,8 +12,9 @@
 
     // If a user is logged in / session available
     if (!empty($_SESSION["userSession"])){
-        // Display cart.php - a list of chosen products
-        // Display products.php - a list of all products
-        include("html/logout.php");
+        include('html/status.php');
+        //include("html/logout.php");
+        include('html/cart.php');
+        include('html/products.php');
     }
 ?>

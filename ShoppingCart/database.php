@@ -28,7 +28,7 @@
                 // Start a session
                 session_start(); 
                 $_SESSION["userSession"] = $username." is logged in";
-                echo $_SESSION["userSession"];
+                //echo $_SESSION["userSession"];
             }
 
             // Otherwise we have no match, error 

@@ -31,6 +31,42 @@ body{
     text-align: center;
 }
 
+ #cart{
+     width: 25%;
+     height: 95%;
+     float: left;
+     background-color: #443742;
+ }
+ 
+#products{
+    width: 75%;
+    height: 95%;
+    float: left;
+    background-color: #bcabae;
+}
+
+#statusBar{
+    width: 100%;
+    height: 5%;
+    float: left;
+    background-color: #805e73;
+
+}
+
+ #cartHeading, #productsHeading{
+     font-family: airstream;
+     margin: 0;
+     font-size: 5vw;
+ }
+
+ #cartHeading{
+     color: #bcabae;
+ }
+
+ #productsHeading{
+     color: #443742;
+ }
+
 input{
     padding: 1%;
     margin: 1%;
@@ -38,7 +74,7 @@ input{
     border-radius: 10px;
 }
 
-#submit{
+#submit, #submitLogout{
     border: none;
     color: #363732;
     background-color: #d8d8f6;
@@ -49,12 +85,19 @@ input{
     background-color: #363732;
 }
 
-#logoutUser{
-    text-align: center;
-    position: absolute;
-    width: 4%;
-    margin-left: 1%;
-    margin-top: 1%;
+#submitLogout{
+    margin: 0;
+    padding: 0;
+    border-radius: 0;
+    height: 100%;
+    width: 5%;
+    margin-left: 95%;
+    font-size: 1vw;
+}
+
+#submitLogout:hover{
+    color: #bcabae;
+    background-color: #0f0f0f;
 }
 
 #logoutForm{
