@@ -1,4 +1,4 @@
 <div id="cart">
-    <h1 id="cartHeading">Your cart</h1>
+    <h1 id="cartHeading">Cart</h1>
 
 </div>

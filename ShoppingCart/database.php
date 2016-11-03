@@ -27,6 +27,7 @@
             if($stmt->rowCount() == 1){
                 // Start a session
                 session_start(); 
+                $_SESSION["username"] = $username;
                 $_SESSION["userSession"] = $username." is logged in";
                 //echo $_SESSION["userSession"];
             }
@@ -79,6 +80,7 @@
         // LOGGING OUT
         if(isset($_POST["submitLogout"])){
             session_start();
+            unset($_SESSION["username"]);
             unset($_SESSION["userSession"]);
             //echo "Logged out";
         }

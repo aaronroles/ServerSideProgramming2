@@ -57,6 +57,8 @@ body{
      font-family: airstream;
      margin: 0;
      font-size: 5vw;
+     text-align: center;
+     border-bottom: solid 10px;
  }
 
  #cartHeading{
@@ -102,4 +104,27 @@ input{
 
 #logoutForm{
     margin: 0;
+}
+
+#welcomeMsg{
+    margin: 0;
+    float: left;
+    width: 10%;
+    height: 100%;
+    font-family: sans-serif;
+    text-align: center;
+    color: #bcabae;
+}
+
+#dummyDiv{
+    width: 5%;
+    height: 100%;
+    float: left;
+}
+
+#logoutForm{
+    margin:0;
+    width: 85%;
+    height: 100%;
+    float: left;
 }
