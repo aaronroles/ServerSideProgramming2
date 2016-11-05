@@ -1,12 +1,17 @@
 <div id="cart">
     <h1 id="cartHeading">Cart</h1>
-
-    <!-- 
-    For every item in the cart create one of these divs 
-    <div class="cartProduct">
-        <h3>Product name - price</h3>  
-        <img src="http://lorempixel.com/400/200/abstract" width="200" height="100"/>
-    </div>
-    -->
-    
+    <?php
+        // Load all products from DB to page 
+        foreach($_SESSION["myCart"] as $id){
+            $stmt = $db->prepare("SELECT * FROM products WHERE productId = :productId");
+            $stmt->bindParam(":productId", $id);
+            $stmt->execute();
+            while ($row = $stmt->fetch(PDO::FETCH_ASSOC)){
+                echo '<div class="cartProduct">';
+                    echo '<h3>'.$row['productName'].' &euro;'.$row['productPrice'].'</h3>'; 
+                    echo '<img src="'.$row["productImg"].'" width="250" height="175"/>';
+                echo '</div>';
+            }
+        }
+    ?>
 </div>

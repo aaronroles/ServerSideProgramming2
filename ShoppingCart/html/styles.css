@@ -161,6 +161,10 @@ h3{
     transform: scale(0.9);
 }
 
+.cartScale{
+    transform: scale(0.45);
+}
+
 .addToCartBtn{
     padding: 0;
 }

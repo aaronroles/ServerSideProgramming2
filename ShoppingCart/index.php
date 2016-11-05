@@ -6,6 +6,7 @@
 
     // Always have a session running on index
     session_start();
+    var_dump($_SESSION);
 
     // Always have database available
     include("database.php");

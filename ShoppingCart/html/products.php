@@ -6,11 +6,12 @@
         $stmt->execute();
         while ($row = $stmt->fetch(PDO::FETCH_ASSOC))
         {
-            echo '<form class="productItem" id="product'.$row["productId"].'" method="post">';
+            echo '<form class="productItem" method="post">';
                 echo '<h3>'.$row['productName'].' &euro;'.$row['productPrice'].'</h3>'; 
                 echo '<img src="'.$row["productImg"].'" class="imgScale"/>';
                 echo '<div class="description">'.$row['productDesc'].'</div>';
-                echo '<input type="submit" class="addToCartBtn" id="addPrd'.$row["productId"].'" name="addToCart" value="Add to Cart">';
+                echo '<input type="hidden" name="productId" value="'.$row["productId"].'">';
+                echo '<input type="submit" class="addToCartBtn" name="addToCart" value="Add to Cart">';
             echo '</form>';
         }
     ?>

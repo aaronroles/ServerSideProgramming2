@@ -28,7 +28,6 @@
                 // Start a session
                 $_SESSION["username"] = $username;
                 $_SESSION["userSession"] = $username." is logged in";
-                //echo $_SESSION["userSession"];
             }
 
             // Otherwise we have no match, error 
@@ -62,12 +61,6 @@
             // Execute query
             $stmt->execute();
 
-            // !-----!
-            // When a user successfully registers have some sort
-            // of display letting them know that the data was
-            // accepted such as a pop up. 
-            // !-----!
-
             // Maybe look at automatically logging in a new user 
             // once they successfully register details
 
@@ -86,7 +79,6 @@
                 $_SESSION["username"] = $username;
                 $_SESSION["userSession"] = "new user ".$username;
             }
-            
         }
 
         // LOGGING OUT
@@ -96,13 +88,14 @@
             //echo "Logged out";
         }
 
-        // If there is no logged in user or session
-        if (empty($_SESSION["userSession"])){
-        }
-
-        // If a user is logged in / session available
-        if (!empty($_SESSION["userSession"])){
-            
+        // If an 'add to cart' button is posted
+        if(isset($_POST["addToCart"])){
+            // Store the id from a hidden input type
+            $productId = $_POST["productId"];
+            $_SESSION["myCart"] = array();
+            array_push($_SESSION['myCart'], $productId);
+            unset($productId);
+            //print_r($_SESSION["myCart"]);   
         }
     }
 
