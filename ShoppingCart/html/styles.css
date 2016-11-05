@@ -1,14 +1,21 @@
 body{
     margin: 0;
+    font-family: arimo;
+    background-color: #443742;
 }
 
 @font-face{
-    font-family: airstream;
-    src: url(../fonts/airstreamNF.ttf);
+    font-family: arimo;
+    src: url(../fonts/Arimo-Regular.ttf);
+}
+
+@font-face{
+    font-family: lobster;
+    src: url(../fonts/Lobster-Regular.ttf);
 }
 
 #registerUser{
-    font-family: airstream;
+    font-family: lobster;
     font-size: 2vw;
     color: #fff;
     background-color: #87bcde;
@@ -18,7 +25,7 @@ body{
 }
 
 #loginUser{
-    font-family: airstream;
+    font-family: lobster;
     font-size: 2vw;
     color: #fff;
     background-color: #805e73;
@@ -50,11 +57,10 @@ body{
     height: 5%;
     float: left;
     background-color: #805e73;
-
 }
 
  #cartHeading, #productsHeading{
-     font-family: airstream;
+     font-family: lobster;
      margin: 0;
      font-size: 5vw;
      text-align: center;
@@ -74,6 +80,7 @@ input{
     margin: 1%;
     border: none;
     border-radius: 10px;
+    font-family: arimo;
 }
 
 #submit, #submitLogout{
@@ -111,9 +118,8 @@ input{
     float: left;
     width: 10%;
     height: 100%;
-    font-family: sans-serif;
-    text-align: center;
     color: #bcabae;
+    font-size: 1.2vw;
 }
 
 #dummyDiv{
@@ -127,4 +133,16 @@ input{
     width: 85%;
     height: 100%;
     float: left;
+}
+
+h3{
+    margin: 0;
+}
+
+.cartProduct{
+    background-color: #805e73;
+    text-align: center;
+    padding-top: 2%;
+    padding-bottom: 2%;
+    margin-bottom: 2%;
 }

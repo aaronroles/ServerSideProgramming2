@@ -84,6 +84,15 @@
             unset($_SESSION["userSession"]);
             //echo "Logged out";
         }
+
+        // If there is no logged in user or session
+        if (empty($_SESSION["userSession"])){
+        }
+
+        // If a user is logged in / session available
+        if (!empty($_SESSION["userSession"])){
+            
+        }
     }
 
     catch(PDOException $e){

@@ -13,7 +13,6 @@
     // If a user is logged in / session available
     if (!empty($_SESSION["userSession"])){
         include('html/status.php');
-        //include("html/logout.php");
         include('html/cart.php');
         include('html/products.php');
     }
