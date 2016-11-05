@@ -26,7 +26,6 @@
             // Should only find one result as usernames are unique
             if($stmt->rowCount() == 1){
                 // Start a session
-                session_start(); 
                 $_SESSION["username"] = $username;
                 $_SESSION["userSession"] = $username." is logged in";
                 //echo $_SESSION["userSession"];
@@ -69,17 +68,29 @@
             // accepted such as a pop up. 
             // !-----!
 
-            session_start();
-            $_SESSION["userSession"] = "New user ".$username." has registered";
-
             // Maybe look at automatically logging in a new user 
             // once they successfully register details
+
+            $stmt = $db->prepare('SELECT username FROM users WHERE username = :username AND password = :password');
+
+            // Bind posted data to variables
+            $stmt->bindParam(":username", $username);
+            $stmt->bindParam(":password", $password);
+
+            // Execute the DB query to find a match
+            $stmt->execute();
+
+            // Should only find one result as usernames are unique
+            if($stmt->rowCount() == 1){
+                // Start a session
+                $_SESSION["username"] = $username;
+                $_SESSION["userSession"] = "new user ".$username;
+            }
             
         }
 
         // LOGGING OUT
         if(isset($_POST["submitLogout"])){
-            session_start();
             unset($_SESSION["username"]);
             unset($_SESSION["userSession"]);
             //echo "Logged out";
