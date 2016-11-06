@@ -85,6 +85,7 @@
         if(isset($_POST["submitLogout"])){
             unset($_SESSION["username"]);
             unset($_SESSION["userSession"]);
+            unset($_SESSION["myCart"]);
             //echo "Logged out";
         }
 
@@ -92,10 +93,8 @@
         if(isset($_POST["addToCart"])){
             // Store the id from a hidden input type
             $productId = $_POST["productId"];
-            $_SESSION["myCart"] = array();
+            // Push that id into the session cart array
             array_push($_SESSION['myCart'], $productId);
-            unset($productId);
-            //print_r($_SESSION["myCart"]);   
         }
     }
 

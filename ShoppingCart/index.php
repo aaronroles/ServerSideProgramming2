@@ -6,7 +6,8 @@
 
     // Always have a session running on index
     session_start();
-    var_dump($_SESSION);
+    require_once("config.php");
+    //var_dump($_SESSION);
 
     // Always have database available
     include("database.php");
@@ -23,6 +24,6 @@
     if (!empty($_SESSION["userSession"])){
         include('html/status.php');
         include('html/cart.php');
-        include('html/products.php');
+        include('html/products.php');            
     }
 ?>
