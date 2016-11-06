@@ -12,31 +12,12 @@ function validateString($data){
             //echo "Checked, validated and sanitised: " . $data . "<br>";
             return $data;
         }
-    }
-    else{
-        echo '<script>alert("Invalid Information")</script>';
-    }
-}
-
-function validateNumber($data){
-    if(isset($data)){
-        if(is_numeric($data)){
-            if(filter_var($data, FILTER_VALIDATE_INT)){
-                $sanitised_number = filter_var($data, FILTER_SANITIZE_NUMBER_INT); 
-                if(filter_var($sanitised_number, FILTER_SANITIZE_NUMBER_INT)){
-                    $data = strip_tags($data);
-                    $data = trim($data);
-                    $data = htmlentities($data);
-                    $data = htmlspecialchars($data);
-                    $data = stripslashes($data);
-                    //echo "Checked, validated and sanitised: " . $data . "<br>";
-                    return $data;
-                }
-            }
+        else{
+            echo '<script>alert("Invalid Text")</script>';
         }
     }
     else{
-        echo '<script>alert("Invalid Information")</script>';
+        echo '<script>alert("Invalid Text")</script>';
     }
 }
 
@@ -53,10 +34,50 @@ function validateEmail($data){
                 //echo "Checked, validated and sanitised: " . $data . "<br>";
                 return $data;
             }
+            else{
+                echo '<script>alert("Invalid Email")</script>';
+            }
+        }
+        else{
+            echo '<script>alert("Invalid Email")</script>';
         } 
     }
     else{
-        echo '<script>alert("Invalid Information")</script>';
+        echo '<script>alert("Invalid Email")</script>';
     }
 }
+
+/* Don't require this function
+
+function validateNumber($data){
+    if(isset($data)){
+        if(is_numeric($data)){
+            if(filter_var($data, FILTER_VALIDATE_INT)){
+                $sanitised_number = filter_var($data, FILTER_SANITIZE_NUMBER_INT); 
+                if(filter_var($sanitised_number, FILTER_SANITIZE_NUMBER_INT)){
+                    $data = strip_tags($data);
+                    $data = trim($data);
+                    $data = htmlentities($data);
+                    $data = htmlspecialchars($data);
+                    $data = stripslashes($data);
+                    //echo "Checked, validated and sanitised: " . $data . "<br>";
+                    return $data;
+                }
+                else{
+                    echo '<script>alert("Invalid Number")</script>';
+                }
+            }
+            else{
+                echo '<script>alert("Invalid Number")</script>';
+            }
+        }
+        else{
+            echo '<script>alert("Invalid Number")</script>';
+        }
+    }
+    else{
+        echo '<script>alert("Invalid Number")</script>';
+    }
+}*/
+
 ?>

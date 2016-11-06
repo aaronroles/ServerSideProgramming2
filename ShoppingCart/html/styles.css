@@ -1,6 +1,7 @@
 body{
     margin: 0;
     font-family: arimo;
+    color: #bcabae;
     background-color: #443742;
 }
 
@@ -64,7 +65,7 @@ body{
      margin: 0;
      font-size: 5vw;
      text-align: center;
-     border-bottom: solid 10px;
+     border-bottom: solid 5px;
  }
 
  #cartHeading{
@@ -155,6 +156,11 @@ h3{
     margin: 1%;
     border-bottom: solid 1px #805e73;
     text-align: center;
+    color: #0f0f0f;
+}
+
+h3{
+    font-family: lobster;
 }
 
 .imgScale{
@@ -172,4 +178,35 @@ h3{
 .addToCartBtn:hover{
     color: #d8d8f6;
     background-color: #363732;
+}
+
+#placeOrderBtn:hover{
+    color: #0f0f0f;
+    background-color: #805e73;
+    border: solid 1px #0f0f0f;
+}
+
+#cartForm{
+    padding-top: 2%;
+    padding-bottom: 2%;
+    margin: 1%;
+    text-align: center;
+}
+
+#delete{
+    margin:0;
+}
+
+#deleteBtn{
+    color: #bcabae;
+    background-color: #a22c29;
+    font-weight: bold;
+    margin: 0;
+    border: 0;
+    border-radius: 0;
+}
+
+#deleteBtn:hover{
+    color: #0f0f0f;
+    background-color: #b07156;
 }

@@ -33,7 +33,7 @@
             // Otherwise we have no match, error 
             else{
                 // Let user know there was an error
-                echo "Username/Password not found";
+                include("html/loginError.php");
             }
         }
 
@@ -86,19 +86,32 @@
             unset($_SESSION["username"]);
             unset($_SESSION["userSession"]);
             unset($_SESSION["myCart"]);
-            //echo "Logged out";
         }
 
-        // If an 'add to cart' button is posted
+        // ADDING TO CART
         if(isset($_POST["addToCart"])){
             // Store the id from a hidden input type
             $productId = $_POST["productId"];
             // Push that id into the session cart array
             array_push($_SESSION['myCart'], $productId);
+            unset($productId);
+        }
+
+        // REMOVE FROM CART 
+        if(isset($_POST["delete"])){
+            $productToRemove = $_POST["cartProductId"];
+            foreach($_SESSION["myCart"] as $index => $value){
+                // If the value of an index is the same as a product's id 
+                if($value == $productToRemove){
+                    // Remove the product at that index
+                    unset($_SESSION["myCart"][$index]);
+
+                }
+            }
         }
     }
 
     catch(PDOException $e){
-        echo "Error - ".$e->getMessage();
+        print_r($e->getMessage());
     }
 ?>
