@@ -105,10 +105,14 @@
                 if($value == $productToRemove){
                     // Remove the product at that index
                     unset($_SESSION["myCart"][$index]);
-
                 }
             }
         }
+
+        #// MAIL ORDER
+        #if(isset($_POST["placeOrder"])){
+        #    mail("aaron_roles93@hotmail.com", "Test", "Hello Aaron");
+        #}
     }
 
     catch(PDOException $e){
