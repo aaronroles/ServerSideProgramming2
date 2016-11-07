@@ -1,7 +1,7 @@
 
 <div id="registerUser">
     <h1 id="registerHeading">Register</h1>
-    <form method="POST" id="registerForm">
+    <form method="POST" id="registerForm" name="registerForm">
         <input type="text" id="username" name="username" placeholder="Username"><br/>
         <input type="password" id="password" name="password" placeholder="Password"><br/>
         <input type="email" id="email" name="email" placeholder="Email"><br/>

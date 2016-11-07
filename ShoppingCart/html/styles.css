@@ -15,6 +15,11 @@ body{
     src: url(../fonts/Lobster-Regular.ttf);
 }
 
+label{
+    font-family: arimo;
+    font-size: 1vw;
+}
+
 #registerUser{
     font-family: lobster;
     font-size: 2vw;

@@ -1,4 +1,6 @@
 <link rel='stylesheet' type='text/css' href='html/styles.css'/>
+<script src="libs/jQuery/jquery-3.1.1.min.js"></script>
+<script src="libs/jQuery/jquery.validation.min.js"></script>
 
 <?php
     // Work maintained on GitHub:
@@ -27,3 +29,5 @@
         include('html/products.php');            
     }
 ?>
+
+<script src="scripts/validation.js"></script>
