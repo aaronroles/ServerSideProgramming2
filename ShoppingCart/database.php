@@ -125,11 +125,16 @@
             $mail->Username = "aaronroles.shoppingcart@gmail.com";
             $mail->Password = "arshopcart1";
             $mail->setFrom("aaronroles.shoppingcart@gmail.com", "Aaron Roles");
-            // Sending to my main gmail address but if we were using this 
-            // for sending to each user then I would sort through the db 
-            // and send to the user's email with the matching username 
-            // from the username session variable 
+            // Send to site owner
             $mail->addAddress("wtcchhh@gmail.com", "Aaron Roles");
+            // Send to user
+            $stmt = $db->prepare("SELECT username, email FROM users WHERE username = :user");
+            $stmt->bindParam(":user", $_SESSION["username"]);
+            $stmt->execute();
+            while ($row = $stmt->fetch(PDO::FETCH_ASSOC))
+            {
+                $mail->addAddress($row['email'], $row['username']);
+            }
             $mail->Subject = "Shopping Cart Order Confirmation";
             $body .= "<h1>Your Items</h1>";
             foreach($_SESSION["myCart"] as $id){
@@ -143,7 +148,7 @@
                     $body .= '</div>';
                 }
             }
-            $body .= "<h1>Thank you</h1>";
+            $body .= "<h1>Thank you, ".$_SESSION["username"] ."</h1>";
             $mail->msgHtml($body);
             if(!$mail->send()){
                 echo "Mail error - ". $mail->ErrorInfo;
