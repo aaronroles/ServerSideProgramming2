@@ -1,0 +1,25 @@
+<?php session_start(); ?>
+<html>
+    <body>
+        <h1>Your Items</h1>
+        <?php
+            foreach($_SESSION["myCart"] as $id){
+                $stmt = $db->prepare("SELECT * FROM products WHERE productId = :productId");
+                $stmt->bindParam(":productId", $id);
+                $stmt->execute();
+                while ($row = $stmt->fetch(PDO::FETCH_ASSOC)){
+                    echo '<div class="cartProduct">';
+                        echo '<h3>'.$row['productName'].' &euro;'.$row['productPrice'].'</h3>'; 
+                        echo '<img src="'.$row["productImg"].'" width="250" height="175"/>';
+                    echo '</div>';
+                }
+            }
+            ?>
+        <h1>Thank you for your business</h1>
+    </body>
+</html>
+
+<?php 
+    unset($_SESSION["myCart"]); 
+    $_SESSION["myCart"] = array();    
+?>

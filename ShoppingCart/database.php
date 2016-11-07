@@ -114,9 +114,9 @@
             require('libs/PHPMailer-master/PHPMailerAutoload.php');
 
             $mail = new PHPMailer;
+            $body = "";
 
             $mail->isSMTP();
-            $body = "Hello, this is your email";
 
             $mail->Host = "smtp.gmail.com";
             $mail->SMTPAuth = true;
@@ -131,12 +131,27 @@
             // from the username session variable 
             $mail->addAddress("wtcchhh@gmail.com", "Aaron Roles");
             $mail->Subject = "Shopping Cart Order Confirmation";
+            $body .= "<h1>Your Items</h1>";
+            foreach($_SESSION["myCart"] as $id){
+                $stmt = $db->prepare("SELECT * FROM products WHERE productId = :productId");
+                $stmt->bindParam(":productId", $id);
+                $stmt->execute();
+                while ($row = $stmt->fetch(PDO::FETCH_ASSOC)){
+                    $body .= '<div class="cartProduct">';
+                        $body .= '<h3>'.$row['productName'].' &euro;'.$row['productPrice'].'</h3>'; 
+                        $body .= '<img src="'.$row["productImg"].'" width="250" height="175"/>';
+                    $body .= '</div>';
+                }
+            }
+            $body .= "<h1>Thank you</h1>";
             $mail->msgHtml($body);
             if(!$mail->send()){
                 echo "Mail error - ". $mail->ErrorInfo;
             }
             else{
-                echo '<script>Order placed</script>';
+                echo '<script>alert("Order placed")</script>';
+                unset($_SESSION["myCart"]); 
+                $_SESSION["myCart"] = array();  
             }
         }
     }

@@ -14,7 +14,6 @@
                         echo '<input type="hidden" name="cartProductId" value="'.$row["productId"].'">';
                         echo '<input type="submit" id="deleteBtn" name="delete" value="Remove from Cart">';
                     echo '</form>';
-                    // NEXT: WRITE CODE TO REMOVE ITEM FROM CART!!!
                 echo '</div>';
             }
         }
