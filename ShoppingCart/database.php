@@ -107,6 +107,7 @@
                 if($value == $productToRemove){
                     // Remove the product at that index
                     unset($_SESSION["myCart"][$index]);
+                    break;
                 }
             }
         }
