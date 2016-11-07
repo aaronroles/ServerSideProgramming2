@@ -1,5 +1,6 @@
 <?php
 
+// Takes in a String and validates it
 function validateString($data){
     if(isset($data)){
         if(is_string($data)){
@@ -21,6 +22,7 @@ function validateString($data){
     }
 }
 
+// Takes in an email and validates it 
 function validateEmail($data){
     if(isset($data)){
         if(filter_var($data, FILTER_VALIDATE_EMAIL)){
@@ -46,38 +48,4 @@ function validateEmail($data){
         echo '<script>alert("Invalid Email")</script>';
     }
 }
-
-/* Don't require this function
-
-function validateNumber($data){
-    if(isset($data)){
-        if(is_numeric($data)){
-            if(filter_var($data, FILTER_VALIDATE_INT)){
-                $sanitised_number = filter_var($data, FILTER_SANITIZE_NUMBER_INT); 
-                if(filter_var($sanitised_number, FILTER_SANITIZE_NUMBER_INT)){
-                    $data = strip_tags($data);
-                    $data = trim($data);
-                    $data = htmlentities($data);
-                    $data = htmlspecialchars($data);
-                    $data = stripslashes($data);
-                    //echo "Checked, validated and sanitised: " . $data . "<br>";
-                    return $data;
-                }
-                else{
-                    echo '<script>alert("Invalid Number")</script>';
-                }
-            }
-            else{
-                echo '<script>alert("Invalid Number")</script>';
-            }
-        }
-        else{
-            echo '<script>alert("Invalid Number")</script>';
-        }
-    }
-    else{
-        echo '<script>alert("Invalid Number")</script>';
-    }
-}*/
-
 ?>

@@ -24,6 +24,7 @@ $(function(){
         }
     });
 
+    // Valid register form
     $("form[name='registerForm']").validate({
         rules: {
             username: {

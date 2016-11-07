@@ -2,6 +2,7 @@
     include("validation.php");
 
     try{
+        // Create database connection to db named "shopping"
         $db = new PDO("mysql:host=localhost;dbname=shopping", "root", "");
         $db->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
         //echo "Connected to db";
@@ -25,7 +26,7 @@
 
             // Should only find one result as usernames are unique
             if($stmt->rowCount() == 1){
-                // Start a session
+                // Create session variables
                 $_SESSION["username"] = $username;
                 $_SESSION["userSession"] = $username." is logged in";
             }
@@ -61,9 +62,7 @@
             // Execute query
             $stmt->execute();
 
-            // Maybe look at automatically logging in a new user 
-            // once they successfully register details
-
+            // Begin statement to login in newly registered user
             $stmt = $db->prepare('SELECT username FROM users WHERE username = :username AND password = :password');
 
             // Bind posted data to variables
@@ -83,6 +82,7 @@
 
         // LOGGING OUT
         if(isset($_POST["submitLogout"])){
+            // Remove all session variables if logged out
             unset($_SESSION["username"]);
             unset($_SESSION["userSession"]);
             unset($_SESSION["myCart"]);
@@ -99,7 +99,9 @@
 
         // REMOVE FROM CART 
         if(isset($_POST["delete"])){
+            // Store product id in variable
             $productToRemove = $_POST["cartProductId"];
+            // For every value->index pair in the cart array
             foreach($_SESSION["myCart"] as $index => $value){
                 // If the value of an index is the same as a product's id 
                 if($value == $productToRemove){
@@ -110,14 +112,15 @@
         }
 
         // MAIL ORDER
+        // This is done by using the PHPMailer library
         if(isset($_POST["placeOrder"])){
+            // Require the library
             require('libs/PHPMailer-master/PHPMailerAutoload.php');
 
             $mail = new PHPMailer;
             $body = "";
 
             $mail->isSMTP();
-
             $mail->Host = "smtp.gmail.com";
             $mail->SMTPAuth = true;
             $mail->SMTPSecure = "tls";
@@ -128,6 +131,7 @@
             // Send to site owner
             $mail->addAddress("wtcchhh@gmail.com", "Aaron Roles");
             // Send to user
+            // Find the user from database
             $stmt = $db->prepare("SELECT username, email FROM users WHERE username = :user");
             $stmt->bindParam(":user", $_SESSION["username"]);
             $stmt->execute();
@@ -137,6 +141,8 @@
             }
             $mail->Subject = "Shopping Cart Order Confirmation";
             $body .= "<h1>Your Items</h1>";
+            // For every cart item, find it in the database
+            // and prepare an item for the email 
             foreach($_SESSION["myCart"] as $id){
                 $stmt = $db->prepare("SELECT * FROM products WHERE productId = :productId");
                 $stmt->bindParam(":productId", $id);
@@ -149,11 +155,14 @@
                 }
             }
             $body .= "<h1>Thank you, ".$_SESSION["username"] ."</h1>";
+            // Attach the body to the email
             $mail->msgHtml($body);
             if(!$mail->send()){
                 echo "Mail error - ". $mail->ErrorInfo;
             }
             else{
+                // Inform the user the order is placed
+                // and send the email
                 echo '<script>alert("Order placed")</script>';
                 unset($_SESSION["myCart"]); 
                 $_SESSION["myCart"] = array();  
