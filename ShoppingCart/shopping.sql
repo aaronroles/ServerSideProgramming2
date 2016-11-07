@@ -3,7 +3,7 @@
 -- http://www.phpmyadmin.net
 --
 -- Host: 127.0.0.1
--- Generation Time: Nov 07, 2016 at 03:07 PM
+-- Generation Time: Nov 07, 2016 at 05:51 PM
 -- Server version: 5.6.17
 -- PHP Version: 5.5.12
 
@@ -76,8 +76,8 @@ CREATE TABLE IF NOT EXISTS `users` (
 
 INSERT INTO `users` (`userId`, `username`, `password`, `email`, `firstName`, `lastName`) VALUES
 (1, 'admin', 'd033e22ae348aeb5660fc2140aec35850c4da997', '', 'Admin', 'User'),
-(2, 'aroles', '2f0c45013479e3bec40d22d0ebf078c5a9f62ac7', 'aroles@mail.com', 'Aaron', 'Roles'),
-(3, 'sineadcooney', '3b4e0e7deef2de1782874b6e14b8659d096a9f1e', 'sineadc@gmail.com', 'Sinead', 'Cooney'),
+(2, 'aroles', '2f0c45013479e3bec40d22d0ebf078c5a9f62ac7', 'aaron_roles93@hotmail.com', 'Aaron', 'Roles'),
+(3, 'sineadcooney', '3b4e0e7deef2de1782874b6e14b8659d096a9f1e', 'cooneysinead71@gmail.com', 'Sinead', 'Cooney'),
 (4, 'herrera', 'f42d27c2fcaedfff2d78cd61a7678143c532f75c', 'herrera@gmail.com', 'Ander', 'Herrera'),
 (6, 'mata8', 'f05a56811055218bff95d14ba319faeef905d3f0', 'jmata@gmail.com', 'Juan', 'Mata');
 
