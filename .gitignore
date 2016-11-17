@@ -1,5 +1,11 @@
 /mPDF
-/Wordpress
 ShoppingCart/libs/
 index.jpg
 AirstreamNF.ttf
+
+/Wordpress/*
+!/Wordpress/wp-content
+/Wordpress/wp-content/*
+!/Wordpress/wp-content/themes
+/Wordpress/wp-content/themes/*
+!/Wordpress/wp-content/themes/cm_aaronroles_theme
