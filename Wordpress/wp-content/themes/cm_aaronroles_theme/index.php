@@ -1,3 +1,5 @@
 <?php
-    echo "This will be the user login area";
+    get_header();
+    include("html/login.php");
+    get_footer();
 ?>
