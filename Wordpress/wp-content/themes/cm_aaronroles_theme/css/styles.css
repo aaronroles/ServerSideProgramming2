@@ -1,3 +1,72 @@
+@font-face{
+    font-family: nunito;
+    src: url(../fonts/Nunito-Regular.ttf);
+}
+
+@font-face{
+    font-family: opensans;
+    src: url(../fonts/OpenSans-Regular.ttf);
+}
+
 body{
-    background-color: #404e5c;
+    margin: 0;
+    height: 100%;
+    width: 100%;
+    color: #f8f1f4;
+    background-color: #00171f;
+    font-family: opensans;
+}
+
+h1, h2, h3{
+    font-family: nunito;
+    margin: 0;
+}
+
+input{
+    font-family: opensans;
+    border: 0;
+    padding: 1%;
+    margin: 1%;
+    background-color: #00171f;
+    border-bottom: solid 1px #f8f1f4;
+    color: #f8f1f4;
+    width: 20%;
+}
+
+input:focus{
+    font-family: opensans;
+    border: 0;
+    padding: 1%;
+    margin: 1%;
+    background-color: #f8f1f4;
+    color: #00171f;
+}
+
+input:hover{
+    cursor: pointer;
+}
+
+#submit{
+    border: none;
+    background-color: #00171f;
+    color: #f8f1f4;
+    border: solid 1px #f8f1f4;
+}
+
+#submit:hover, #submit:focus{
+    background-color: #f8f1f4;
+    color: #00171f;
+    cursor: pointer;
+}
+
+form{
+    margin: 0;
+}
+
+#loginUser{
+    font-size: 2vw;
+    width: 100%;
+    float: left;
+    text-align: center;
+    margin-top: 12%;
 }
