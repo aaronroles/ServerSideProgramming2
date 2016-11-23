@@ -1,5 +1,3 @@
-<?php
-?>
 <div id="admin">
     <h1>Welcome Admin</h1>
     <ul>
