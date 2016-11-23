@@ -5,6 +5,7 @@
     include("html/login.php");
     get_footer();
 
+    // If button is submitted
     if(isset($_POST["submitLogin"])){
         // Get post data
         $username = $_POST["username"];
@@ -19,6 +20,10 @@
         if(isset($data)){
             // Message to logged in user 
             echo "Hello ".$data->empUsername;
+            // If EMPLOYER show admin page
+
+            // If EMPLOYEE show employee page 
+            
         }
         // If no data found
         else{
