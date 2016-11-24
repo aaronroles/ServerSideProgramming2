@@ -1,5 +1,7 @@
 <?php
 
+    global $username;
+
     // If login button is submitted
     if(isset($_POST["submitLogin"])){
         // Get post data
@@ -16,20 +18,15 @@
             // If it is the employer/admin who logged in 
             // then show him the admin stuff
             if($data->empRole == "Employer"){
-                echo "Hello ".$data->empRole;
-                //wp_redirect("/employer");
-                // ^^^ Create Employer page in the admin
-                // ^^^ Create employer template page 
-                //exit;
+                wp_redirect(get_site_url()."/?page_id=50"); 
+                exit;
             }
+
             // If it is the employee who logged in 
             // then show the employee pages 
             if($data->empRole == "Employee"){
-                echo "Hello ".$data->empRole;
-                // wp_redirect("/employee");
-                // ^^^ Create Employee page in the admin
-                // ^^^ Create employee template page 
-                //exit;
+                wp_redirect(get_site_url()."/?page_id=48");
+                exit;
             }
         }
         // If no data found

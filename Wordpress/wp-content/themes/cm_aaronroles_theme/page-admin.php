@@ -1,4 +1,8 @@
 <?php
+    /*
+    Template Name: Admin
+    */
+    get_header();
 ?>
 
 <div id="admin">
@@ -9,3 +13,7 @@
         <li>Register new employee</li>
     </ul>
 </div>
+
+<?php
+    get_footer();
+?>

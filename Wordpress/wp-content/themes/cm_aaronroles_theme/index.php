@@ -2,6 +2,6 @@
     global $wpdb;
 
     get_header();
-    include("html/login.php");
+    include("login.php");
     get_footer();
 ?>
