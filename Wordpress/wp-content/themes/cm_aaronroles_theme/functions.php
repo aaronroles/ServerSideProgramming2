@@ -16,14 +16,20 @@
             // If it is the employer/admin who logged in 
             // then show him the admin stuff
             if($data->empRole == "Employer"){
-                wp_redirect(get_template_directory_uri()."/html/admin.php");
-                exit;
+                echo "Hello ".$data->empRole;
+                //wp_redirect("/employer");
+                // ^^^ Create Employer page in the admin
+                // ^^^ Create employer template page 
+                //exit;
             }
             // If it is the employee who logged in 
             // then show the employee pages 
             if($data->empRole == "Employee"){
-                wp_redirect(get_template_directory_uri()."/html/employee.php");
-                exit;
+                echo "Hello ".$data->empRole;
+                // wp_redirect("/employee");
+                // ^^^ Create Employee page in the admin
+                // ^^^ Create employee template page 
+                //exit;
             }
         }
         // If no data found
