@@ -1,0 +1,54 @@
+@font-face{
+    font-family: nunito;
+    src: url(./fonts/Nunito-Regular.ttf);
+}
+
+@font-face{
+    font-family: opensans;
+    src: url(./fonts/OpenSans-Regular.ttf);
+}
+
+body{
+    margin: 0;
+    color: #f8f1f4;
+    background-color: #00171f;
+    font-family: opensans;
+    overflow: hidden;
+}
+
+h1, h2, h3{
+    font-family: nunito;
+    margin: 0;
+    margin-left: 1%;
+}
+
+p{
+    margin:0;
+}
+
+input, select{
+    margin: 1%;
+}
+
+#registerDiv, #loginDiv{
+    width: 50%;
+    float: left;
+    text-align: center;
+}
+
+a{
+    color: #f8f1f4;
+}
+
+a:hover{
+    color: #92898a;
+}
+
+#backToMenu{
+    margin: 1%;
+}
+
+.expenseTable{
+    margin-left: 5%;
+    width:70%;
+}

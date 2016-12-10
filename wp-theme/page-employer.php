@@ -7,8 +7,9 @@
  */
 
 get_header();
+// Links to the employer's pages
 echo
-    "<h1>Welcome Employer</h1>
+    "<h2>Welcome Employer</h2>
     <ul>
         <li><a href='/view-all-expenses/'>View all expenses</a></li>
         <li><a href='/pending/'>View pending expenses</a></li>

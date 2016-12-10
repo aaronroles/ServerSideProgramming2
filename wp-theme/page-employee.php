@@ -7,7 +7,9 @@
  */
 
 get_header();
-echo "<h1>Welcome Employee</h1>
+// Links to the employee's accessible pages
+echo "
+    <h2>Welcome Employee</h2>
     <ul>
         <li><a href='/view-your-expenses/'>View your expenses</a></li>
         <li><a href='/add/'>Add an expense</a></li>

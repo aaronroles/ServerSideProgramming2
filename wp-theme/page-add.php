@@ -7,11 +7,11 @@
  */
 
 get_header();
-echo "<h1>Add Expense</h1>";
-// a form to add expenses
+echo "<h2>Add Expense</h2>";
+// A form to add expenses
 echo
     "<form method='post'>
-        <input type='text' name='description' minlength='10' maxlength='250' placeholder='Description'><br>
+        <input id='expDesc' type='text' name='description' minlength='10' maxlength='250' placeholder='Description'><br>
         <select name='category'>
             <option value='food'>Food</option>
             <option value='fuel'>Fuel</option>
@@ -22,5 +22,5 @@ echo
         <input type='number' name='cost' min='0' maxlength='5' placeholder='Cost'><br>
         <input type='submit' name='submitExpense' value='Submit'>
     </form>";
-echo "<a id='backToMenu' href='./index/'>Back to Menu</a>";
+echo "<a id='backToMenu' href='./index/'>&#8629; Back to Menu</a>";
 get_footer();

@@ -6,7 +6,7 @@
  * Time: 14:18
  */
 
-echo "<div id='loginDiv'>";
+// Default wordpress log in form
 $args = array(
     'label_remember' => ("Remember Me"),
     'label_log_in' => ("Login"),
@@ -14,6 +14,7 @@ $args = array(
     'remember' => true,
     'id_submit' => 'fp-wp-submit'
 );
-echo "<h1>Login</h1>";
-wp_login_form($args);
+echo "<div id='loginDiv'>";
+    echo "<h2>Login</h2>";
+    wp_login_form($args);
 echo "</div>";

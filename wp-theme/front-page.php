@@ -8,13 +8,16 @@
 
 get_header();
 
+// If nobody is logged in
 if(!is_user_logged_in()) {
+    // Show login and register forms
     include("login.php");
     include("register.php");
 }
+// If someone is logged inc
 else if(is_user_logged_in()){
-    wp_redirect("/index/");
-    exit();
+    // Then link them to the main menu
+    echo "<a href='/index'>Go to main menu</a>";
 }
 
 get_footer();

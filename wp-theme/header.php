@@ -18,5 +18,6 @@
     </head>
 
     <body>
-        <h1>Financial Recording</h1>
-        <?php echo "Welcome user ".$currentUserId; ?>
+        <div id="headerDiv">
+            <h1>Financial Recording</h1>
+        </div>
