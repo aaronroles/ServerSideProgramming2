@@ -11,7 +11,6 @@ echo "<h1>View All Expenses</h1>";
 echo
 "<table border='solid 1px black'>
     <tr>
-        <th>Expense ID</th>
         <th>Description</th>
         <th>Category</th>
         <th>Cost</th>
@@ -26,7 +25,6 @@ $allExpenses = $wpdb->get_results(
 
 foreach ($allExpenses as $data) {
     echo "<tr>";
-    echo "<td>" . $data->expenseId . "</td>";
     echo "<td>" . $data->expenseDesc . "</td>";
     echo "<td>" . $data->expenseCategory . "</td>";
     echo "<td>" . $data->expenseCost . "</td>";
@@ -36,4 +34,6 @@ foreach ($allExpenses as $data) {
     echo "</tr>";
 }
 echo "</table>";
+
+echo "<a id='backToMenu' href='./index/'>Back to Menu</a>";
 get_footer();

@@ -7,9 +7,10 @@
  */
 
 ?>
-
-    <?php if (is_user_logged_in()) : ?>
-        <a href="<?php echo wp_logout(); ?>">Logout</a>
-    <?php endif;?>
+    <?php if(is_user_logged_in()){ ;?>
+        <form id='logoutForm' method="post">
+            <input type="submit" name="logOutBtn" value="Log Out">
+        </form>
+    <?php } ?>
     </body>
 </html>

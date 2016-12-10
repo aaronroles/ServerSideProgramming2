@@ -22,5 +22,5 @@ echo
         <input type='number' name='cost' min='0' maxlength='5' placeholder='Cost'><br>
         <input type='submit' name='submitExpense' value='Submit'>
     </form>";
-
+echo "<a id='backToMenu' href='./index/'>Back to Menu</a>";
 get_footer();

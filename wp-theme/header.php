@@ -11,8 +11,12 @@
 <html>
     <title>Financial Recording</title>
     <head>
+        <?php
+        wp_head();
+        $currentUserId = get_current_user_id();
+        ?>
     </head>
 
     <body>
         <h1>Financial Recording</h1>
-        <h1>User ID: <?php echo get_current_user_id(); ?></h1>
+        <?php echo "Welcome user ".$currentUserId; ?>

@@ -119,3 +119,9 @@ if(isset($_POST["submitExpense"])){
         )
     );
 }
+
+if(isset($_POST["logOutBtn"])){
+    wp_logout();
+    wp_redirect('/');
+    exit();
+}

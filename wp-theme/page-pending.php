@@ -43,4 +43,5 @@ foreach ($pendingExpenses as $data) {
     echo "</tr>";
 }
 echo "</table>";
+echo "<a id='backToMenu' href='./index/'>Back to Menu</a>";
 get_footer();
